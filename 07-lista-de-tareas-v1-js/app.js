@@ -1,6 +1,6 @@
-//  **************************************************  
-//  **********  /07-lista-de-tareas/app.js  **********  
-//  **************************************************  
+//  *****************************************************  
+//  **********  /07-lista-de-tareas-js/app.js  **********  
+//  *****************************************************  
 
 
 //  -----  Referencias al HTML  -----
@@ -10,7 +10,13 @@ const listaDeTareas = document.getElementById('lista-de-tareas');
 
 
 //  ----------  Cargar las tareas guardadas al iniciar  ----------
-document.addEventListener('DOMContentLoaded', cargarTareas);
+document.addEventListener('DOMContentLoaded', () => {
+
+    //  -----  Reseteo del Input y Obtener el Foco  -----
+    input.value = '';
+    input.focus();
+    cargarTareas();
+});
 
 
 //  -----------------------------------------------
@@ -108,13 +114,13 @@ function eliminarTarea(e) {
 function guardarTareaEnLocalStorage(texto, completada) {
     
     // Obtiene las tareas del localStorage. Si no hay tareas, inicializa con un array vacío.
-    let tareas = localStorage.getItem('tareas') ? JSON.parse(localStorage.getItem('tareas')) : [];
+    let tareas = localStorage.getItem('tareasJS') ? JSON.parse(localStorage.getItem('tareasJS')) : [];
     
     // Añade la nueva tarea al array de tareas existentes. Cada tarea es un objeto con el texto y el estado de completada.
     tareas.push({ texto, completada });
     
     // Guarda el array actualizado de tareas en localStorage, convirtiéndolo a formato JSON.
-    localStorage.setItem('tareas', JSON.stringify(tareas));
+    localStorage.setItem('tareasJS', JSON.stringify(tareas));
 }
 
 
@@ -122,7 +128,7 @@ function guardarTareaEnLocalStorage(texto, completada) {
 function actualizarEstadoEnLocalStorage(tareaTexto) {
     
     // Obtiene el array de tareas del localStorage y lo convierte de JSON a un array de objetos.
-    let tareas = JSON.parse(localStorage.getItem('tareas'));
+    let tareas = JSON.parse(localStorage.getItem('tareasJS'));
     
     // Recorre el array de tareas y cambia el estado de la tarea cuyo texto coincida con el proporcionado.
     tareas = tareas.map(tarea => 
@@ -131,7 +137,7 @@ function actualizarEstadoEnLocalStorage(tareaTexto) {
     );
     
     // Guarda el array de tareas actualizado en localStorage.
-    localStorage.setItem('tareas', JSON.stringify(tareas));
+    localStorage.setItem('tareasJS', JSON.stringify(tareas));
 }
 
 
@@ -139,13 +145,13 @@ function actualizarEstadoEnLocalStorage(tareaTexto) {
 function eliminarTareaDeLocalStorage(tareaTexto) {
     
     // Obtiene el array de tareas del localStorage y lo convierte de JSON a un array de objetos.
-    let tareas = JSON.parse(localStorage.getItem('tareas'));
+    let tareas = JSON.parse(localStorage.getItem('tareasJS'));
     
     // Filtra el array de tareas para eliminar la tarea cuyo texto coincida con el proporcionado.
     tareas = tareas.filter(tarea => tarea.texto.trim() !== tareaTexto);
     
     // Guarda el array de tareas actualizado (sin la tarea eliminada) en localStorage.
-    localStorage.setItem('tareas', JSON.stringify(tareas));
+    localStorage.setItem('tareasJS', JSON.stringify(tareas));
 }
 
 
@@ -153,7 +159,7 @@ function eliminarTareaDeLocalStorage(tareaTexto) {
 function cargarTareas() {
     
     // Obtiene las tareas del localStorage. Si no hay tareas, inicializa con un array vacío.
-    let tareas = localStorage.getItem('tareas') ? JSON.parse(localStorage.getItem('tareas')) : [];
+    let tareas = localStorage.getItem('tareasJS') ? JSON.parse(localStorage.getItem('tareasJS')) : [];
     
     // Recorre cada tarea y la crea en el DOM usando la función `crearElementosDOM`.
     tareas.forEach(tarea => {

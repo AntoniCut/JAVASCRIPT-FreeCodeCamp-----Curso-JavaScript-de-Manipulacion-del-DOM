@@ -1,5 +1,5 @@
 /*  ******************************************************  */
-/*  **********  /07-lista-de-tareas/styles.css  **********  */
+/*  **********  /07-lista-de-tareas-js/styles.css  **********  */
 /*  ******************************************************  */
 
 
@@ -131,10 +131,11 @@ i {
   color: rgb(255, 255, 255); 
 }
 
+/* 
 .icono-completar:hover,
 .icono-eliminar:hover {
-  background-color: rgba(255, 255, 255, 0.523);
-}
+  background-color: rgba(255, 255, 255, 0);
+} */
 
 
 /*  *****  Responsive  *****  */

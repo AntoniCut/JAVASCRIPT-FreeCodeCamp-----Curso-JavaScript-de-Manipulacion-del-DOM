@@ -1,0 +1,172 @@
+/*  *************************************************  */
+/*  **********  /06-cronometro/styles.css  **********  */
+/*  *************************************************  */
+
+
+/* **********  Estilos Generales  ********** */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background: url(madera.jpg) no-repeat center center/ cover;
+}
+
+/*  **********  Contenedores  **********  */
+
+.contenedor-principal {
+    width: 80vw;
+    max-width: 600px;
+    min-height: 350px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+}
+
+.contenedor-marcador-botones {
+    display: flex;
+    flex-direction: column;
+    max-width: 500px;
+}
+
+
+.contenedor-botones {
+    padding: 20px;
+}
+
+
+/*  **********  Cronometro  **********  */
+#marcador {
+    display: flex;
+    position: relative;
+}
+
+#horasMarcador,
+#minutosMarcador,
+#segundosMarcador,
+#centesimasMarcador {
+    width: 100%;
+    position: absolute;
+    top: -80px;
+    margin-bottom: 40px;
+    font-size: 80px;
+    font-weight: bold;
+    user-select: none;
+    font-family: 'DS-Digital', sans-serif;
+}
+
+#horasMarcador {
+    left: -65%;
+}
+
+#minutosMarcador {
+    left: -24%;
+}
+
+#segundosMarcador {
+    left: 20%;
+}
+
+#centesimasMarcador {
+    left: 58%;
+}
+
+
+/*  **********  Botones  **********  */
+
+.boton {
+    width: 80px;
+    height: 80px;
+    font-size: 50px;
+    margin: 10px;
+    padding: 10px;
+    cursor: pointer;
+}
+
+#boton-inicio-pausa.iniciar,
+#boton-inicio-pausa.iniciar i {
+    background-color: #08e008;
+}
+
+#boton-inicio-pausa.pausar,
+#boton-inicio-pausa.pausar i {
+    background-color: #ffdc00;
+}
+
+#boton-reiniciar {
+    background-color: red;
+}
+
+
+/*  **********  Responsive  **********  */
+
+@media(max-width: 550px) {
+
+    #horasMarcador {
+        left: -60%;
+    }
+    #minutosMarcador {
+        left: -19%;
+    }
+    #segundosMarcador {
+        left: 21%;
+    }
+    #centesimasMarcador {
+        left: 58%;
+    }
+}
+
+@media(max-width: 500px) {
+
+    #horasMarcador,
+    #minutosMarcador,
+    #segundosMarcador,
+    #centesimasMarcador {
+        font-size: 60px;
+    }
+}
+
+@media(max-width: 450px) {
+
+    #horasMarcador {
+        left: -44%;
+    }
+    #minutosMarcador {
+        left: -12%;
+    }
+    #segundosMarcador {
+        left: 21%;
+    }
+    #centesimasMarcador {
+        left: 50%;
+    }
+}
+
+
+@media(max-width: 400px) {
+
+    #horasMarcador,
+    #minutosMarcador,
+    #segundosMarcador,
+    #centesimasMarcador {
+        font-size: 45px;
+    }
+
+    button,
+    #boton-inicio-pausa.iniciar,
+    #boton-inicio-pausa.pausar {
+        width: 60px !important;
+        height: 60px !important;
+        font-size: 40px !important;
+    }
+}
