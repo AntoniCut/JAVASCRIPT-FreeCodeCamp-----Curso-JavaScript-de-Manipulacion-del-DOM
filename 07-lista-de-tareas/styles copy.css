@@ -1,0 +1,174 @@
+/*  ******************************************************  */
+/*  **********  /07-lista-de-tareas/styles.css  **********  */
+/*  ******************************************************  */
+
+
+/* Estilos generales */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Roboto', sans-serif;
+}
+
+body {
+  /* height: 100vh; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 40px 0;
+  background: url(fondo.jpg) no-repeat center center/cover;
+}
+
+.contenedor {
+  width: 700px;
+  min-height: 500px;
+  background-color: white;
+  padding: 40px;
+  border: 5px solid black;
+  border-radius: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  align-items: center;
+}
+
+h1 {
+  font-size: 50px;
+  font-weight: bold;
+}
+
+input {
+  width: 80%;
+  height: 50px;
+  font-size: 25px;
+  margin: 20px;
+  padding: 10px;
+  border: 4px solid #404040;
+  border-radius: 10px;
+}
+
+button {
+  width: 150px;
+  height: 60px;
+  padding: 10px;
+  color: white;
+  background-color: #1312a8;
+  font-size: 22px;
+  border-radius: 20px;
+  border: none;
+  cursor: pointer;
+  user-select: none;
+  transition: all 300ms ease-in-out;
+}
+
+button:hover {
+  background-color: #407ba6;
+  /* background-color: rgba(255, 255, 255, 0.523); */
+}
+
+/*  -----  Lista de Tareas  -----  */
+#lista-de-tareas {
+  width: 80%;
+  margin-top: 20px;
+}
+
+/* Tareas individuales */
+
+.tarea {
+  width: 100%;
+  min-height: 70px;
+  font-size: 25px;
+  padding: 10px;
+  margin-top: 10px;
+  color: white;
+  background-color: #407ba6;
+  border: 2px solid black;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  text-align: center;
+}
+
+/* Estilo para tarea completada */
+
+.tarea.completada {
+  text-decoration: line-through;
+  background-color: black;
+  border: none;
+}
+
+.tarea p {
+  max-width: 350px;
+  overflow-wrap: break-word; /* Alternativa a `word-wrap` para mejor soporte */
+  white-space: normal;   /* Permite que el texto se ajuste dentro de la caja */
+}
+
+/* Iconos */
+
+i {
+  margin: 5px;
+  padding: 10px;
+  cursor: pointer;
+}
+
+.icono-completar {
+  color: rgb(0, 255, 0);
+}
+
+.icono-eliminar {
+  color: rgb(255, 255, 255);
+}
+
+.icono-completar:hover,
+.icono-eliminar:hover {
+  background-color: rgba(255, 255, 255, 0.523);
+}
+
+
+/*  *****  Responsive  *****  */
+
+@media (max-width: 750px) {
+
+  .contenedor {
+    width: 80%;
+    padding: 40px;
+    padding-left: 5px;
+    padding-right: 5px;
+  }
+
+  input {
+    margin: 10px;
+    padding: 10px;
+  }
+}
+
+
+@media (max-width: 500px) {
+
+  h1 {
+    font-size: 24px;
+  }
+
+  input {
+    width: 100%;
+    height: 50px;
+    font-size: 16px;
+    margin: 10px;
+    padding: 10px;
+    margin-left: 0px;
+    margin-right: 0px;
+  }
+
+  button {
+    width: auto;
+    height: 40px; 
+    padding: 10px;
+    font-size: 18px;
+  }
+
+  
+} 

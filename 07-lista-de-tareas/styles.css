@@ -1,0 +1,172 @@
+/*  ******************************************************  */
+/*  **********  /07-lista-de-tareas/styles.css  **********  */
+/*  ******************************************************  */
+
+
+/*  *****  Estilos Generales  *****  */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Roboto', sans-serif;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 40px 0;
+  background: url(fondo.jpg) repeat center center/cover;
+}
+
+.contenedor {
+  width: 700px;
+  min-height: 500px;
+  background-color: white;
+  padding: 40px;
+  border: 5px solid black;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+h1 {
+  font-size: 50px;
+  font-weight: bold;
+}
+
+input {
+  width: 80%;
+  height: 50px;
+  font-size: 25px;
+  margin: 20px;
+  padding: 10px;
+  border: 4px solid #404040;
+  border-radius: 10px;
+}
+
+button {
+  width: 150px;
+  height: 60px;
+  padding: 10px;
+  color: white;
+  background-color: #1312a8;
+  font-size: 22px;
+  border-radius: 20px;
+  border: none;
+  cursor: pointer;
+  user-select: none;
+  transition: all 300ms ease-in-out;
+}
+
+button:hover {
+  background-color: #407ba6;
+}
+
+#lista-de-tareas {
+  width: 80%;
+  margin-top: 20px;
+}
+
+
+/*  *****  Tareas individuales  *****  Se crean Dinamicamente  *****  */
+.tarea {
+  width: 100%;
+  min-height: 70px;
+  font-size: 25px;
+  padding: 10px;
+  margin-top: 10px;
+  color: white;
+  background-color: #407ba6;
+  border: 2px solid black;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  text-align: left;
+  overflow: hidden; /* Para evitar que los elementos se desborden */
+}
+
+.tarea p {
+  max-width: calc(100% - 60px); /* Asegura espacio para los iconos */
+  word-wrap: break-word;
+  white-space: normal;
+  margin: 0;
+  overflow-wrap: anywhere; /* Alternativa para soportar largos de palabras */
+}
+
+.tarea.completada {
+  text-decoration: line-through;
+  background-color: black;
+  border: none;
+}
+
+.tarea .iconos {
+  display: flex;
+  gap: 10px;
+}
+
+.tarea i {
+  margin: 0;
+  padding: 10px;
+  cursor: pointer;
+  flex-shrink: 0; /* Evita que los iconos se encojan */
+}
+
+
+/* Iconos */
+i {
+  margin: 5px;
+  padding: 10px;
+  cursor: pointer;
+}
+
+.icono-completar {
+  color: rgb(0, 255, 0);
+}
+
+.icono-eliminar {
+  color: rgb(255, 255, 255); 
+}
+
+.icono-completar:hover,
+.icono-eliminar:hover {
+  background-color: rgba(255, 255, 255, 0.523);
+}
+
+
+/*  *****  Responsive  *****  */
+
+@media (max-width: 750px) {
+  
+  .contenedor {
+    width: 90%;     /* Cambiado a 90% para mejor ajuste */
+    padding: 20px;
+  }
+
+  input {
+    margin: 10px;
+    padding: 10px;
+  }
+
+  .tarea {
+    font-size: 18px;
+  }
+}
+
+@media (max-width: 500px) {
+  .tarea {
+    font-size: 16px;
+    padding: 5px;
+  }
+
+  .tarea p {
+    max-width: calc(100% - 50px);
+  }
+
+  .tarea i {
+    padding: 5px;
+  }
+}
